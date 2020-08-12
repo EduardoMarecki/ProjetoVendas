@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace ProjetoVendas
 {
@@ -9,6 +10,8 @@ namespace ProjetoVendas
 
             int op = 1, Cpf = 0;
             string Nome = null;
+
+            List<string> cliente = new List<string>();
 
             Console.WriteLine("Projeto Vendas - MENU");
 
@@ -34,6 +37,7 @@ namespace ProjetoVendas
                 {
 
                     case 1:
+
                         Cliente c = new Cliente();
 
                         Console.WriteLine("\nCadastro de Clientes.");
@@ -51,12 +55,20 @@ namespace ProjetoVendas
 
                         Console.WriteLine("\nListagem de Clientes.");
 
-                        
-
                         break;
                     case 3:
 
+                        Funcionario f = new Funcionario();
+
                         Console.WriteLine("\nCadastro de Funcionários.");
+
+                        Console.WriteLine("\nDigite seu nome: ");
+                        f.Nome = Console.ReadLine();
+
+                        Console.WriteLine("\nDigite seu CPF: ");
+                        f.Cpf = Console.ReadLine();
+
+                        Console.WriteLine($"\nNome: {f.Nome}. CPF: {f.Cpf} ");
 
                         break;
                     case 4:
@@ -66,7 +78,20 @@ namespace ProjetoVendas
                         break;
                     case 5:
 
+                        Produtos p = new Produtos();
+
                         Console.WriteLine("\nCadstro de Produtos.");
+
+                        Console.WriteLine("\nDigite seu nome: ");
+                        p.Nome = Console.ReadLine();
+
+                        Console.WriteLine("\nDigite o valor: ");
+                        p.Preco = Console.ReadLine();
+
+                        Console.WriteLine("\nDigite a quantidade: ");
+                        p.Quantidade = Console.ReadLine();
+
+                        Console.WriteLine($"\nNome: {p.Nome}. Valor: R${p.Preco}. Quantidade: {p.Quantidade} ");
 
                         break;
                     case 6:
