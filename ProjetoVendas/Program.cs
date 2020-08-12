@@ -7,7 +7,8 @@ namespace ProjetoVendas
         static void Main(string[] args)
         {
 
-            int op = 1;
+            int op = 1, Cpf = 0;
+            string Nome = null;
 
             Console.WriteLine("Projeto Vendas - MENU");
 
@@ -33,13 +34,24 @@ namespace ProjetoVendas
                 {
 
                     case 1:
+                        Cliente c = new Cliente();
 
                         Console.WriteLine("\nCadastro de Clientes.");
+
+                        Console.WriteLine("\nDigite seu nome: ");
+                        c.Nome = Console.ReadLine();
+
+                        Console.WriteLine("\nDigite seu CPF: ");
+                        c.Cpf = Console.ReadLine();
+
+                        Console.WriteLine($"\nNome: {c.Nome}. CPF: {c.Cpf} ");
 
                         break;
                     case 2:
 
                         Console.WriteLine("\nListagem de Clientes.");
+
+                        
 
                         break;
                     case 3:
@@ -89,6 +101,7 @@ namespace ProjetoVendas
                         break;
 
                     }
+
 
                 Console.WriteLine("\nPrescione uma tela para continuar.");
                 Console.ReadKey();
